@@ -1,5 +1,5 @@
 {
-    "name": "ViberiSalon/beauty-domain",
+    "name": "VS-domain/VS-domain",
     "description": "Domain model for Doctrine (beauty-catalog project)",
     "require": {
         "doctrine/orm": "^2.5",
