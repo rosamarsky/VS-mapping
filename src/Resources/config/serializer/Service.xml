@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serializer>
+  <class name="DashboardBundle\Entity\Service"
+          exlusion-policy="ALL">
+    <property name="id"
+              expose="true"
+              groups="salons.detail, salons.list" />
+    <property name="name"
+              expose="true"
+              groups="salons.detail, salons.list" />
+  </class>
+</serializer>

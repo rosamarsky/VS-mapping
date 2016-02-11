@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serializer>
+  <class name="DashboardBundle\Entity\Special"
+          exlusion-policy="ALL">
+    <property name="id"
+              expose="true"
+              groups="salons.detail" />
+    <property name="title"
+              expose="true"
+              groups="salons.detail" />
+    <property name="description"
+              expose="true"
+              groups="salons.detail" />
+    <property name="image"
+              expose="true"
+              groups="salons.detail" />
+    <property name="fromDate"
+              expose="true"
+              groups="salons.detail" >
+        <type><![CDATA[DateTime<'d.m.Y'>]]></type>
+    </property>
+    <property name="toDate"
+              expose="true"
+              groups="salons.detail" >
+        <type><![CDATA[DateTime<'d.m.Y'>]]></type>
+    </property>
+    <property name="isExpired"
+              expose="true"
+              groups="salons.detail" />
+  </class>
+</serializer>

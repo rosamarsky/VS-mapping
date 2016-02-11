@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+  <entity name="DashboardBundle\Entity\Salon"
+          table="salons"
+          repository-class="DashboardBundle\Repository\SalonRepository">
+
+    <id name="id" type="integer" column="salon_id">
+      <generator strategy="NONE"/>
+    </id>
+
+    <field name="address" type="string" column="siteAddress" length="255"/>
+    <field name="title" type="string" column="title" length="255"/>
+    <field name="description" type="text" column="description"/>
+    <field name="pageName" type="string" column="address" length="255"/>
+    <field name="logo" type="string" column="logo" length="255"/>
+    <field name="website" type="string" column="website" nullable="true" length="255"/>
+    <field name="otherServices" type="text" column="otherServices" nullable="true"/>
+    <field name="rating" type="bigint" column="rating"/>
+    <field name="type" type="string" column="type"/>
+    <field name="longitude" type="float" column="longitude"/>
+    <field name="latitude" type="float" column="latitude"/>
+    <field name="grade" type="string" length="255" column="grade"/>
+    <field name="published" type="boolean" column="published"/>
+
+    <one-to-one field="city" target-entity="DashboardBundle\Entity\City">
+      <join-column name="city_id" referenced-column-name="city_id" />
+    </one-to-one>
+    <one-to-one field="country" target-entity="DashboardBundle\Entity\Country">
+      <join-column name="country_id" referenced-column-name="country_id" />
+    </one-to-one>
+    <one-to-many field="schedule" target-entity="Schedule" mapped-by="salon" />
+    <one-to-many field="phones" target-entity="DashboardBundle\Entity\Phone" mapped-by="salon" />
+    <one-to-many field="photos" target-entity="DashboardBundle\Entity\Photo" mapped-by="salon" />
+    <one-to-many field="specials" target-entity="DashboardBundle\Entity\Special" mapped-by="salon" />
+    <one-to-many field="feedbacks" target-entity="DashboardBundle\Entity\Feedback" mapped-by="salon" />
+    <many-to-one field="delegate" target-entity="DashboardBundle\Entity\Customer">
+      <join-column name="delegate" referenced-column-name="id" />
+    </many-to-one>
+    <many-to-many field="services" target-entity="DashboardBundle\Entity\Service">
+      <join-table name="services_salons">
+        <join-columns>
+          <join-column name="salon_id" referenced-column-name="salon_id" />
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="service_id" referenced-column-name="id" />
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="followers" target-entity="DashboardBundle\Entity\Customer">
+      <join-table name="bookmarks">
+        <join-columns>
+          <join-column name="salon_id" referenced-column-name="salon_id" />
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="customer_id" referenced-column-name="id" />
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

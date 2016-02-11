@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serializer>
+  <class name="DashboardBundle\Entity\Customer"
+          exlusion-policy="ALL">
+    <property name="id"
+              expose="true"
+              groups="salons.detail, salons.list, feedbacks.list" />
+    <property name="name"
+              expose="true"
+              groups="salons.detail, salons.list, feedbacks.list" />
+    <property name="avatar"
+              expose="true"
+              groups="" />
+    <property name="address"
+              expose="true"
+              groups="salons.detail, salons.list, feedbacks.list" />
+    <property name="photos"
+              expose="true"
+              groups="" />
+    <property name="smallAvatar"
+              expose="true"
+              groups="salons.detail, salons.list, feedbacks.list" />
+    <property name="bookmarks"
+              expose="true"
+              groups="" />
+    <property name="subscriptions"
+              expose="true"
+              groups=""/>
+    <property name="subscribers"
+              expose="true"
+              groups=""/>
+  </class>
+</serializer>

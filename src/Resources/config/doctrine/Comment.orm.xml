@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping
+        xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+  <entity
+          repository-class="DashboardBundle\Repository\CommentRepository"
+          name="DashboardBundle\Entity\Comment"
+          table="comments">
+
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="message" type="text" column="message"/>
+    <field name="createdAt" type="datetime" column="created_at"/>
+    <field name="isRemoved" type="boolean" column="is_removed"/>
+
+    <many-to-one field="customer" target-entity="DashboardBundle\Entity\Customer">
+        <join-column name="customer_id" referenced-column-name="id" />
+    </many-to-one>
+    <many-to-one field="feedback" target-entity="DashboardBundle\Entity\Feedback">
+      <join-column name="feedback_id" referenced-column-name="id" />
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

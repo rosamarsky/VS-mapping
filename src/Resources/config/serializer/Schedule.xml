@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serializer>
+  <class name="DashboardBundle\Entity\Schedule"
+          exlusion-policy="ALL">
+    <property name="id"
+              expose="true"
+              groups="salons.detail" />
+    <property name="dayId"
+              expose="true"
+              groups="salons.detail" />
+    <property name="workFrom"
+              expose="true"
+              groups="salons.detail" >
+        <type><![CDATA[DateTime<'H:i'>]]></type>
+    </property>
+    <property name="workTo"
+              expose="true"
+              groups="salons.detail" >
+      <type><![CDATA[DateTime<'H:i'>]]></type>
+    </property>
+    <property name="breakFrom"
+              expose="true"
+              groups="salons.detail" >
+      <type><![CDATA[DateTime<'H:i'>]]></type>
+    </property>
+    <property name="breakTo"
+              expose="true"
+              groups="salons.detail" >
+        <type><![CDATA[DateTime<'H:i'>]]></type>
+    </property>
+      <property name="isDayOff"
+              expose="true"
+              groups="salons.detail" />
+  </class>
+</serializer>

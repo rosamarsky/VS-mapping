@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serializer>
+  <class name="DashboardBundle\Entity\Comment"
+          exlusion-policy="ALL">
+    <property name="id"
+              expose="true"
+              groups="salons.detail" />
+    <property name="message"
+              expose="true"
+              groups="salons.detail" />
+    <property name="customer"
+              expose="true"
+              groups="salons.detail" />
+    <property name="createdAt"
+            expose="true"
+            groups="salons.detail" >
+      <type><![CDATA[DateTime<'d.m.Y H:i:s'>]]></type>
+    </property>
+    <property name="isRemoved"
+              expose="true"
+              groups="salons.detail" />
+  </class>
+</serializer>

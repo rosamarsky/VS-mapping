@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping
+        xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+  <entity
+          repository-class="DashboardBundle\Repository\RegionRepository"
+          name="DashboardBundle\Entity\Region"
+          table="_regions">
+
+    <id name="id" type="integer" column="region_id">
+      <generator strategy="NONE"/>
+    </id>
+
+    <field name="titleRu" type="string" column="title_ru" length="255" nullable="true"/>
+    <field name="titleUa" type="string" column="title_ua" length="255" nullable="true"/>
+    <field name="titleBe" type="string" column="title_be" length="255" nullable="true"/>
+    <field name="titleEn" type="string" column="title_en" length="255" nullable="true"/>
+    <field name="titleEs" type="string" column="title_es" length="255" nullable="true"/>
+    <field name="titlePt" type="string" column="title_pt" length="255" nullable="true"/>
+    <field name="titleDe" type="string" column="title_de" length="255" nullable="true"/>
+    <field name="titleFr" type="string" column="title_fr" length="255" nullable="true"/>
+    <field name="titleIt" type="string" column="title_it" length="255" nullable="true"/>
+    <field name="titlePl" type="string" column="title_pl" length="255" nullable="true"/>
+    <field name="titleJa" type="string" column="title_ja" length="255" nullable="true"/>
+    <field name="titleLt" type="string" column="title_lt" length="255" nullable="true"/>
+    <field name="titleLv" type="string" column="title_lv" length="255" nullable="true"/>
+    <field name="titleCz" type="string" column="title_cz" length="255" nullable="true"/>
+
+    <one-to-many field="cities" target-entity="DashboardBundle\Entity\City" mapped-by="region"/>
+
+    <many-to-one field="country" target-entity="DashboardBundle\Entity\Country">
+        <join-column name="country_id" referenced-column-name="country_id"/>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
