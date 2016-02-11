@@ -1,5 +1,5 @@
 {
-    "name": "Nexode/beauty-domain",
+    "name": "ViberiSalon/beauty-domain",
     "description": "Domain model for Doctrine (beauty-catalog project)",
     "require": {
         "doctrine/orm": "^2.5",
