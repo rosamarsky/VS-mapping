@@ -1,5 +1,5 @@
 {
-    "name": "VS-domain/VS-domain",
+    "name": "vs-domain/vs-domain",
     "description": "Domain model for Doctrine (beauty-catalog project)",
     "require": {
         "doctrine/orm": "^2.5",
