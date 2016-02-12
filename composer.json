@@ -3,6 +3,6 @@
     "description": "Domain model for Doctrine (beauty-catalog project)",
     "require": {
         "doctrine/orm": "^2.5",
-	    "symfony/security": "^3.0.0"
+	    "symfony/security": "2.8.2"
     }
 }
