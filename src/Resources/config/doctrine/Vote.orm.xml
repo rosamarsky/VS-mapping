@@ -6,8 +6,8 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
   <entity
-          repository-class="DashboardBundle\Repository\VoteRepository"
-          name="DashboardBundle\Entity\Vote"
+          repository-class="Vs\Repository\VoteRepository"
+          name="Vs\Entity\Vote"
           table="feedbacks_voters">
 
     <id name="id" type="integer" column="city_id">

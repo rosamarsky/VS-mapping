@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <serializer>
-  <class name="DashboardBundle\Entity\CustomerPhoto"
+  <class name="Vs\Entity\CustomerPhoto"
           exlusion-policy="ALL">
     <property name="id"
               expose="true"

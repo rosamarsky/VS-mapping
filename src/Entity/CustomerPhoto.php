@@ -1,6 +1,6 @@
 <?php
 
-namespace DashboardBundle\Entity;
+namespace Vs\Entity;
 
 /**
  * CustomerPhoto

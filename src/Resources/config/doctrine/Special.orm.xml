@@ -6,8 +6,8 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
   <entity
-          repository-class="DashboardBundle\Repository\SpecialRepository"
-          name="DashboardBundle\Entity\Special"
+          repository-class="Vs\Repository\SpecialRepository"
+          name="Vs\Entity\Special"
           table="specials">
 
     <id name="id" type="integer" column="id">
@@ -20,7 +20,7 @@
     <field name="image" type="string" column="image" length="255"/>
     <field name="isExpired" type="boolean" column="isExpired"/>
 
-    <many-to-one field="salon" target-entity="DashboardBundle\Entity\Salon">
+    <many-to-one field="salon" target-entity="Salon">
         <join-column name="salon_id" referenced-column-name="salon_id" />
     </many-to-one>
   </entity>

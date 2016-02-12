@@ -6,8 +6,8 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
   <entity
-          repository-class="DashboardBundle\Repository\CustomerRepository"
-          name="DashboardBundle\Entity\Customer"
+          repository-class="Vs\Repository\CustomerRepository"
+          name="Vs\Entity\Customer"
           table="customers">
 
     <id name="id" type="integer" column="id">
@@ -21,14 +21,14 @@
     <field name="socialId" type="string" column="social_id" length="255"/>
     <field name="smallAvatar" type="string" column="smallAvatar" length="255"/>
 
-    <one-to-many field="photos" target-entity="DashboardBundle\Entity\CustomerPhoto" mapped-by="customer" />
-    <one-to-many field="salons" target-entity="DashboardBundle\Entity\Salon" mapped-by="customer" />
-    <one-to-many field="feedbacks" target-entity="DashboardBundle\Entity\Feedback" mapped-by="customer" />
-    <one-to-many field="comments" target-entity="DashboardBundle\Entity\Feedback" mapped-by="customer" />
-    <many-to-many field="bookmarks" mapped-by="followers" target-entity="DashboardBundle\Entity\Salon" />
+    <one-to-many field="photos" target-entity="CustomerPhoto" mapped-by="customer" />
+    <one-to-many field="salons" target-entity="Salon" mapped-by="customer" />
+    <one-to-many field="feedbacks" target-entity="Feedback" mapped-by="customer" />
+    <one-to-many field="comments" target-entity="Feedback" mapped-by="customer" />
+    <many-to-many field="bookmarks" mapped-by="followers" target-entity="Salon" />
 
-    <many-to-many field="subscriptions" mapped-by="subscribers" target-entity="DashboardBundle\Entity\Customer" />
-    <many-to-many field="subscribers" target-entity="DashboardBundle\Entity\Customer">
+    <many-to-many field="subscriptions" mapped-by="subscribers" target-entity="Customer" />
+    <many-to-many field="subscribers" target-entity="Customer">
         <join-table name="subscriptions">
             <join-columns>
                 <join-column name="customer_id" referenced-column-name="id" />

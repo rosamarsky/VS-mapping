@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <serializer>
-  <class name="DashboardBundle\Entity\Salon"
+  <class name="Vs\Entity\Salon"
           exlusion-policy="ALL">
     <property name="id"
               expose="true"

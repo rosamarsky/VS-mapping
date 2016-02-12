@@ -1,13 +1,13 @@
 <?php
 
-namespace DashboardBundle\Repository;
+namespace Vs\Repository;
 
-use DashboardBundle\Entity\Change;
-use DashboardBundle\Entity\Salon;
-use DashboardBundle\Specifications\Change\ChangeSpecificationFactory;
-use DashboardBundle\Specifications\Salon\SalonSpecificationFactory;
+use Vs\Entity\Change;
+use Vs\Entity\Salon;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\Expr;
+use DashboardBundle\Specifications\Change\ChangeSpecificationFactory;
+use DashboardBundle\Specifications\Salon\SalonSpecificationFactory;
 
 /**
  * SalonRepository

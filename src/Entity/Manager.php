@@ -1,6 +1,6 @@
 <?php
 
-namespace DashboardBundle\Entity;
+namespace Vs\Entity;
 
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;

@@ -6,8 +6,8 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
   <entity
-          repository-class="DashboardBundle\Repository\ServiceRepository"
-          name="DashboardBundle\Entity\Service"
+          repository-class="Vs\Repository\ServiceRepository"
+          name="Vs\Entity\Service"
           table="services">
 
     <id name="id" type="integer" column="id">

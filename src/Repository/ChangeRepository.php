@@ -1,8 +1,8 @@
 <?php
 
-namespace DashboardBundle\Repository;
+namespace Vs\Repository;
 
-use DashboardBundle\Entity\Salon;
+use Vs\Entity\Salon;
 use Doctrine\ORM\EntityRepository;
 
 /**

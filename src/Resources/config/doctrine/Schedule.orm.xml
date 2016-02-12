@@ -4,8 +4,8 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-  <entity repository-class="DashboardBundle\Repository\ScheduleRepository"
-          name="DashboardBundle\Entity\Schedule"
+  <entity repository-class="Vs\Repository\ScheduleRepository"
+          name="Vs\Entity\Schedule"
           table="schedules">
 
     <id name="id" type="integer" column="id">

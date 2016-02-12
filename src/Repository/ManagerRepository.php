@@ -1,6 +1,6 @@
 <?php
 
-namespace DashboardBundle\Repository;
+namespace Vs\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

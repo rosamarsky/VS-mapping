@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <serializer>
-  <class name="DashboardBundle\Entity\Schedule"
+  <class name="Vs\Entity\Schedule"
           exlusion-policy="ALL">
     <property name="id"
               expose="true"

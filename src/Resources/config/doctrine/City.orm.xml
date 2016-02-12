@@ -6,8 +6,8 @@
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
   <entity
-          repository-class="DashboardBundle\Repository\CityRepository"
-          name="DashboardBundle\Entity\City"
+          repository-class="Vs\Repository\CityRepository"
+          name="Vs\Entity\City"
           table="_cities">
 
     <id name="id" type="integer" column="city_id">
@@ -59,13 +59,13 @@
     <field name="areaCz" type="string" column="area_cz" length="255" nullable="true"/>
     <field name="regionCz" type="string" column="region_cz" length="255" nullable="true"/>
 
-    <one-to-many field="metroStations" target-entity="DashboardBundle\Entity\MetroStation" mapped-by="city" />
+    <one-to-many field="metroStations" target-entity="MetroStation" mapped-by="city" />
 
-    <many-to-one field="country" target-entity="DashboardBundle\Entity\Country">
+    <many-to-one field="country" target-entity="Country">
       <join-column name="country_id" referenced-column-name="country_id"/>
     </many-to-one>
 
-    <many-to-one field="region" target-entity="DashboardBundle\Entity\Region" >
+    <many-to-one field="region" target-entity="Region" >
       <join-column name="region_id" referenced-column-name="region_id" nullable="true"/>
     </many-to-one>
 

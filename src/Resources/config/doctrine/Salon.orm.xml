@@ -4,9 +4,9 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                       http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-  <entity name="DashboardBundle\Entity\Salon"
+  <entity name="Vs\Entity\Salon"
           table="salons"
-          repository-class="DashboardBundle\Repository\SalonRepository">
+          repository-class="Vs\Repository\SalonRepository">
 
     <id name="id" type="integer" column="salon_id">
       <generator strategy="NONE"/>
@@ -26,21 +26,21 @@
     <field name="grade" type="string" length="255" column="grade"/>
     <field name="published" type="boolean" column="published"/>
 
-    <one-to-one field="city" target-entity="DashboardBundle\Entity\City">
+    <one-to-one field="city" target-entity="City">
       <join-column name="city_id" referenced-column-name="city_id" />
     </one-to-one>
-    <one-to-one field="country" target-entity="DashboardBundle\Entity\Country">
+    <one-to-one field="country" target-entity="Country">
       <join-column name="country_id" referenced-column-name="country_id" />
     </one-to-one>
     <one-to-many field="schedule" target-entity="Schedule" mapped-by="salon" />
-    <one-to-many field="phones" target-entity="DashboardBundle\Entity\Phone" mapped-by="salon" />
-    <one-to-many field="photos" target-entity="DashboardBundle\Entity\Photo" mapped-by="salon" />
-    <one-to-many field="specials" target-entity="DashboardBundle\Entity\Special" mapped-by="salon" />
-    <one-to-many field="feedbacks" target-entity="DashboardBundle\Entity\Feedback" mapped-by="salon" />
-    <many-to-one field="delegate" target-entity="DashboardBundle\Entity\Customer">
+    <one-to-many field="phones" target-entity="Phone" mapped-by="salon" />
+    <one-to-many field="photos" target-entity="Photo" mapped-by="salon" />
+    <one-to-many field="specials" target-entity="Special" mapped-by="salon" />
+    <one-to-many field="feedbacks" target-entity="Feedback" mapped-by="salon" />
+    <many-to-one field="delegate" target-entity="Customer">
       <join-column name="delegate" referenced-column-name="id" />
     </many-to-one>
-    <many-to-many field="services" target-entity="DashboardBundle\Entity\Service">
+    <many-to-many field="services" target-entity="Service">
       <join-table name="services_salons">
         <join-columns>
           <join-column name="salon_id" referenced-column-name="salon_id" />
@@ -50,7 +50,7 @@
         </inverse-join-columns>
       </join-table>
     </many-to-many>
-    <many-to-many field="followers" target-entity="DashboardBundle\Entity\Customer">
+    <many-to-many field="followers" target-entity="Customer">
       <join-table name="bookmarks">
         <join-columns>
           <join-column name="salon_id" referenced-column-name="salon_id" />
